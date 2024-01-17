@@ -1,6 +1,33 @@
+import { useState } from 'react';
 import './TodoListPage.css';
 
 export const TodoListPage = () => {
+
+    const [todoList, setTodoList] = useState([]);
+    const [addItem, setAddItem] = useState('');
+
+
+    const onAddItem = () => {
+        if (addItem.length == 0) return alert("No ha ingresado un pendiente");
+        setTodoList(
+            [
+                ...todoList,
+                {
+                    id: todoList.length,
+                    item: addItem,
+                }
+            ]
+        );
+        setAddItem('');
+    };
+
+    const onDeleteItem = (id) => {
+        const newList = todoList.filter((item) => item.id != id);
+        setTodoList(newList)
+    };
+
+
+
     return (
         <div className='todoPages-container'>
             <div className='todoPages-content'>
@@ -10,63 +37,28 @@ export const TodoListPage = () => {
                         type="text"
                         name="todoItem"
                         placeholder='Agrega un actividad ...'
+                        value={addItem}
+                        onChange={(e) => setAddItem(e.target.value)}
                     />
-                    <button>
+                    <button onClick={onAddItem}>
                         <span className="material-symbols-outlined">
                             playlist_add
                         </span>
                     </button>
                 </div>
-
                 <section className='todoPages-container-items'>
-                    <div>
-                        <span>1.- Levantarse de la cama.</span>
-                        <button>
-                            <span className="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <span>1.- Levantarse de la cama.</span>
-                        <button>
-                            <span className="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <span>1.- Levantarse de la cama.</span>
-                        <button>
-                            <span className="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <span>1.- Levantarse de la cama.</span>
-                        <button>
-                            <span className="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <span>1.- Levantarse de la cama.</span>
-                        <button>
-                            <span className="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <span>1.- Levantarse de la cama.</span>
-                        <button>
-                            <span className="material-symbols-outlined">
-                                delete
-                            </span>
-                        </button>
-                    </div>
+                    {
+                        todoList.map(({ id, item }, index) => (
+                            <div key={id}>
+                                <span>{`${index + 1}.- ${item}`}</span>
+                                <button onClick={() => onDeleteItem(id)}>
+                                    <span className="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </div>
+                        ))
+                    }
                 </section>
 
             </div>
