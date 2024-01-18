@@ -52,6 +52,7 @@
     margin-bottom: 20px;
     margin-top: 20px;
     padding: 12px;
+    min-height: 200px;
 }
 
 .todoPages-container-items div {
@@ -79,4 +80,20 @@
 
 .todoPages-container-items div button span {
     font-size: 16px;
+}
+
+.todoPages-container-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoPages-container-img img {
+    width: 100px;
+}
+
+.todoPages-container-img p {
+    font-size: 16px;
+    margin-top: 6px;
 }

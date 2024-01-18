@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './TodoListPage.css';
 
 export const TodoListPage = () => {
 
     const [todoList, setTodoList] = useState([]);
     const [addItem, setAddItem] = useState('');
-    const [count, setCount] = useState(0);
-
 
     const onAddItem = () => {
 
@@ -16,7 +15,7 @@ export const TodoListPage = () => {
         const newItem = [
             ...todoList,
             {
-                id: count,
+                id: uuidv4(),
                 item: addItem,
             }
         ]
@@ -26,8 +25,6 @@ export const TodoListPage = () => {
         //Actualizar lista en la memoria del navegador para tener persistencia
         window.localStorage.setItem("todoList", JSON.stringify(newItem));
 
-        //Aumentamos en uno el contador para el id
-        setCount(count + 1);
         //limpiamos la caja de texto input
         setAddItem('');
     };
@@ -35,6 +32,7 @@ export const TodoListPage = () => {
     const onDeleteItem = (id) => {
         const newList = todoList.filter((item) => item.id != id);
         setTodoList(newList);
+        window.localStorage.setItem("todoList", JSON.stringify(newList));
     };
 
 
@@ -70,16 +68,21 @@ export const TodoListPage = () => {
                 </div>
                 <section className='todoPages-container-items'>
                     {
-                        todoList.map(({ id, item }, index) => (
-                            <div key={id}>
-                                <span>{`${index + 1}.- ${item}`}</span>
-                                <button onClick={() => onDeleteItem(id)}>
-                                    <span className="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
+                        todoList.length > 0
+                            ? todoList.map(({ id, item }, index) => (
+                                <div key={id}>
+                                    <span>{`${index + 1}.- ${item}`}</span>
+                                    <button onClick={() => onDeleteItem(id)}>
+                                        <span className="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                    </button>
+                                </div>
+                            ))
+                            : <div className='todoPages-container-img' >
+                                <img src="/triste.png" alt="icono" />
+                                <p>No tienes pendientes</p>
                             </div>
-                        ))
                     }
                 </section>
 
