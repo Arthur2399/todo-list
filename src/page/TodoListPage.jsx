@@ -5,6 +5,7 @@ export const TodoListPage = () => {
 
     const [todoList, setTodoList] = useState([]);
     const [addItem, setAddItem] = useState('');
+    const [count, setCount] = useState(0);
 
 
     const onAddItem = () => {
@@ -13,20 +14,19 @@ export const TodoListPage = () => {
             [
                 ...todoList,
                 {
-                    id: todoList.length,
+                    id: count,
                     item: addItem,
                 }
             ]
         );
+        setCount(count + 1);
         setAddItem('');
     };
 
     const onDeleteItem = (id) => {
         const newList = todoList.filter((item) => item.id != id);
-        setTodoList(newList)
+        setTodoList(newList);
     };
-
-
 
     return (
         <div className='todoPages-container'>
