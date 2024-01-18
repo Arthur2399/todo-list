@@ -39,6 +39,8 @@ export const TodoListPage = () => {
 
 
     useEffect(() => {
+        if ((window.localStorage.getItem("todoList") == null)) return;
+
         //Extraer informacion del local storge
         const todoList = window.localStorage.getItem("todoList");
         //Transformar en JSON
