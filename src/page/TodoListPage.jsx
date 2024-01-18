@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './TodoListPage.css';
 
 export const TodoListPage = () => {
@@ -9,17 +9,26 @@ export const TodoListPage = () => {
 
 
     const onAddItem = () => {
+
+        //Condicion para validar que el usuario al menos escribio una letra
         if (addItem.length == 0) return alert("No ha ingresado un pendiente");
-        setTodoList(
-            [
-                ...todoList,
-                {
-                    id: count,
-                    item: addItem,
-                }
-            ]
-        );
+        //Crearmo el nuevo arreglo de objeto de todoList
+        const newItem = [
+            ...todoList,
+            {
+                id: count,
+                item: addItem,
+            }
+        ]
+        //Actualizar la lista del estado local 
+        setTodoList(newItem);
+
+        //Actualizar lista en la memoria del navegador para tener persistencia
+        window.localStorage.setItem("todoList", JSON.stringify(newItem));
+
+        //Aumentamos en uno el contador para el id
         setCount(count + 1);
+        //limpiamos la caja de texto input
         setAddItem('');
     };
 
@@ -27,6 +36,17 @@ export const TodoListPage = () => {
         const newList = todoList.filter((item) => item.id != id);
         setTodoList(newList);
     };
+
+
+    useEffect(() => {
+        //Extraer informacion del local storge
+        const todoList = window.localStorage.getItem("todoList");
+        //Transformar en JSON
+        const todoListParse = JSON.parse(todoList);
+        //Seteo la info en el estado local
+        setTodoList(todoListParse)
+    }, [])
+
 
     return (
         <div className='todoPages-container'>
