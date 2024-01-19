@@ -11,6 +11,9 @@ export const TodoListPage = () => {
         <div className='todoPages-container'>
             <div className='todoPages-content'>
                 <h1>Organiza todos tus pendientes</h1>
+
+                {/* InputItemAdd */}
+
                 <div className='todoPages-content-insert'>
                     <input
                         type="text"
