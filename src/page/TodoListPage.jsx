@@ -1,5 +1,5 @@
 
-import { ItemTodo, ImageNothing } from '../components';
+import { ItemTodo, ImageNothing, InputItemAdd } from '../components';
 import { useTodoListPage } from '../hooks/useTodoListPage';
 import './TodoListPage.css';
 
@@ -11,20 +11,7 @@ export const TodoListPage = () => {
         <div className='todoPages-container'>
             <div className='todoPages-content'>
                 <h1>Organiza todos tus pendientes</h1>
-                <div className='todoPages-content-insert'>
-                    <input
-                        type="text"
-                        name="todoItem"
-                        placeholder='Agrega un actividad ...'
-                        value={addItem}
-                        onChange={(e) => setAddItem(e.target.value)}
-                    />
-                    <button onClick={onAddItem}>
-                        <span className="material-symbols-outlined">
-                            playlist_add
-                        </span>
-                    </button>
-                </div>
+                <InputItemAdd addItem ={addItem} setAddItem={setAddItem} onAddItem={onAddItem}/>
                 <section className='todoPages-container-items'>
                     {
                         todoList.length > 0
