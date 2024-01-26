@@ -1,36 +1,22 @@
 import './Login.css';
-
 export const Login = () => {
     return (
-        <div className='container'>
-            <div className='content'>
-                <div className='input'>
-
-                    <input 
-                    type='text' 
+        <div className='container-login'>
+            <div className='content-yellow'>
+                <input
+                    type='text'
                     placeholder='Usuario'
-                    >
-                    </input>
-                    
-
-                    <input
+                />
+                <input
                     type='text'
                     placeholder='contraseña'
-                    >
-                    </input>
-
-                    <button>
-                        <span >
-                            Login
-                        </span>
-                    </button>
-
-                    
-
-                </div>
+                />
+                <button>
+                    <span >
+                        Login
+                    </span>
+                </button>
             </div>
-
-
         </div>
     )
 }

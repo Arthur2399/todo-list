@@ -1,15 +1,19 @@
 @import '../../styles/_vars.css';
 
-.container{
-    background: var(--red);
+.container-login {
+    background: var(--backgroundApp);
     width: 100%;
     height: 100vh;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.content{
+.content-yellow {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-}
+    background: var(--yellow);
+    padding: 10px;
 
+}
