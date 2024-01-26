@@ -1,0 +1,51 @@
+.register-container{
+    width: 100%;
+    height: 100vh;
+    background: var(--backgroundApp);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-content{
+    height: 50%;
+    width: 50vh;
+    border-bottom: 1px solid black;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: var(--yellow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-content-items{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+}
+
+.register-content-items input{
+    border: none;
+    border-bottom: 2px solid black;
+    width: 65%;
+    margin-bottom: 25px;
+}
+
+.register-content-items button{
+    border: none;
+    border-radius: 5px;
+    background: var(--orange);
+    margin-top: 30px;
+    width: 40%;
+    height: 30px;
+}
+
+.register-content-items button:hover{
+    background: var(--red);
+    color: var(--white);
+}

@@ -11,9 +11,6 @@ export const TodoListPage = () => {
         <div className='todoPages-container'>
             <div className='todoPages-content'>
                 <h1>Organiza todos tus pendientes</h1>
-<<<<<<< HEAD:src/page/TodoListPage.jsx
-                <InputItemAdd addItem ={addItem} setAddItem={setAddItem} onAddItem={onAddItem}/>
-=======
 
                 {/* InputItemAdd */}
 
@@ -31,7 +28,6 @@ export const TodoListPage = () => {
                         </span>
                     </button>
                 </div>
->>>>>>> c25db6323e1991f9ba08d020bcc2c3d0f3de1339:src/module/todoList/page/TodoListPage.jsx
                 <section className='todoPages-container-items'>
                     {
                         todoList.length > 0
