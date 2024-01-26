@@ -1,4 +1,4 @@
-.register-container{
+.register-container {
     width: 100%;
     height: 100vh;
     background: var(--backgroundApp);
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.register-content{
+.register-content {
     height: 50%;
     width: 50vh;
     border: 2px solid black;
@@ -18,7 +18,8 @@
     justify-content: center;
     align-items: center;
 }
-.register-content-items{
+
+.register-content-items {
     width: 100%;
     height: 100%;
     display: flex;
@@ -28,14 +29,18 @@
     background: var(--white);
 }
 
-.register-content-items input{
+.register-content-items input {
     border: none;
     border-bottom: 2px solid black;
     width: 65%;
     margin-bottom: 25px;
 }
 
-.register-content-items button{
+.register-content-items input:focus {
+    outline: none;
+}
+
+.register-content-items button {
     border: none;
     border-radius: 5px;
     background: var(--orange);
@@ -44,7 +49,7 @@
     height: 30px;
 }
 
-.register-content-items button:hover{
+.register-content-items button:hover {
     background: var(--red);
     color: var(--white);
 }
