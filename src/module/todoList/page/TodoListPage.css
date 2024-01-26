@@ -1,6 +1,8 @@
+@import '../../../styles/_vars.css';
+
 .todoPages-container {
     align-items: center;
-    background: #F5EEE6;
+    background: var(--backgroundApp);
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -8,7 +10,7 @@
 }
 
 .todoPages-content {
-    background: hsl(19, 63%, 87%);
+    background: var(--orange);
     border-radius: 10px;
     padding: 10px;
 }
@@ -24,9 +26,9 @@
 }
 
 .todoPages-content-insert input {
-    background: white;
+    background: var(--white);
     border-radius: 5px;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     font-size: 16px;
     height: 38px;
     width: 100%;
@@ -34,20 +36,20 @@
 
 .todoPages-content-insert input:focus {
     outline: none;
-    border: 2px solid #E6A4B4;
+    border: 2px solid var(--pink);
 }
 
 .todoPages-content-insert button {
-    background: #E6A4B4;
+    background: var(--pink);
     border-radius: 5px;
     border: none;
-    color: white;
+    color: var(--white);
     height: 40px;
     margin-left: 10px;
 }
 
 .todoPages-container-items {
-    background: #FFF8E3;
+    background: var(--yellow);
     border-radius: 5px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -63,9 +65,9 @@
 }
 
 .todoPages-container-items div button {
-    background: #A94438;
+    background: var(--red);
     border: none;
-    color: white;
+    color: var(--white);
     font-size: 10px;
     border-radius: 5px;
     font-variation-settings:
