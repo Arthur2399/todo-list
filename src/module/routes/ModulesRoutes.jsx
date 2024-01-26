@@ -1,5 +1,10 @@
+import { Route, Routes } from "react-router-dom"
+import { TodoListPage } from "../todoList"
+
 export const ModulesRoutes = () => {
     return (
-        <div>ModulesRoutes</div>
+        <Routes>
+            <Route path="/" element={<TodoListPage />} />
+        </Routes>
     )
 }
