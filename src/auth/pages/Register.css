@@ -10,9 +10,8 @@
 .register-content {
     height: 50%;
     width: 50vh;
-    border: 2px solid black;
     border-radius: 5px;
-    background: var(--yellow);
+    background: var(--orange);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,24 +25,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--white);
+    background: var(--yellow);
 }
 
 .register-content-items input {
     border: none;
-    border-bottom: 2px solid black;
+    border-radius: 3px;
     width: 65%;
+    height: 25px;
     margin-bottom: 25px;
 }
 
 .register-content-items input:focus {
-    outline: none;
+    outline: 2px solid var(--pink);
 }
 
 .register-content-items button {
     border: none;
     border-radius: 5px;
-    background: var(--orange);
+    background: var(--pink);
     margin-top: 30px;
     width: 40%;
     height: 30px;
