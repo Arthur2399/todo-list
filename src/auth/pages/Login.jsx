@@ -3,6 +3,8 @@ export const Login = () => {
     return (
         <div className='container-login'>
             <div className='content-yellow'>
+                <h1>TO-DO</h1>
+                
                 <input
                     type='text'
                     placeholder='Usuario'
@@ -11,7 +13,8 @@ export const Login = () => {
                     type='text'
                     placeholder='contraseña'
                 />
-                <button>
+
+                <button type='button' id='login-button'>
                     <span >
                         Login
                     </span>
