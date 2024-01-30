@@ -1,20 +1,21 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { ModulesRoutes } from '../module';
 import { AuthRoutes } from '../auth';
+import { useAuthStore } from '../store/auth/hooks/useAuthStore';
 
 export const AppRouter = () => {
 
-    const status = "No-Authenticated"; //"No-Authenticated"
+    const { status } = useAuthStore();
     return (
         <Routes>
             {
                 status === "Authenticated"
                     ? <>
-                        <Route path="/" element={<ModulesRoutes  />} />
+                        <Route path="/" element={<ModulesRoutes />} />
                         <Route path="/*" element={<Navigate to="/" />} />
                     </>
-                    : <> 
-                        <Route path="/auth/*" element={<AuthRoutes  />} />
+                    : <>
+                        <Route path="/auth/*" element={<AuthRoutes />} />
                         <Route path="/*" element={<Navigate to="/auth/login" />} />
                     </>
             }
