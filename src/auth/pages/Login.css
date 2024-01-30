@@ -34,7 +34,7 @@
 
 #login-button{
     background-color: var(--red);
-    color: white;
+    color: var(--white);
     opacity: 80%;
     margin-top: 10px;
     border-radius: 10px;
@@ -46,7 +46,7 @@
 #login-button:hover{
     background-color: var(--red);
     opacity: 100%;
-    color: white;
+    color: var(--white);
 }
 
 

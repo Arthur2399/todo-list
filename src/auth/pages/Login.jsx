@@ -3,7 +3,7 @@ export const Login = () => {
     return (
         <div className='container-login'>
             <div className='content-yellow'>
-                <h1>TO-DO</h1>
+                <h1>TO-DO  | Organiza tu día</h1>
                 
                 <input
                     type='text'
@@ -11,7 +11,7 @@ export const Login = () => {
                 />
                 <input
                     type='text'
-                    placeholder='contraseña'
+                    placeholder='Contraseña'
                 />
 
                 <button type='button' id='login-button'>
