@@ -1,34 +1,58 @@
+import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
+import *as Yup from 'yup';
+import { useAuthStore } from '../../store';
 import './Login.css';
-import { login } from '../../store/auth/slice/authSlice';
-import { useAuthStore } from '../../store/auth/hooks/useAuthStore';
-
-
 
 export const Login = () => {
 
-    const { startLogin } = useAuthStore();
+    const { startLogin, errorMessage } = useAuthStore();
+
+
+    const validationSchema = Yup.object({
+        email: Yup.string().email("Ingrese un correo electronico válido").required("Este campo es oblogatorio"),
+        password: Yup.string().required("Este campo es oblogatorio"),
+    })
+
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values) => {
+            console.log(values);
+        }
+    });
 
     return (
         <div className='container-login'>
-            <div className='content-yellow'>
-                <h1>TO-DO  | Organiza tu día</h1>
+            <div className='content-login'>
+                <h1>¡Bienvenido!</h1>
                 <input
-                    type='text'
+                    type='email'
                     placeholder='Usuario'
+                    name='email'
+                    onChange={formik.handleChange}
                 />
+                <span>{formik.errors?.email}</span>
                 <input
-                    type='text'
+                    type='password'
+                    name='password'
                     placeholder='Contraseña'
-                />
-                <button type='button' id='login-button' onClick={startLogin} >
+                    onChange={formik.handleChange}
 
-                    <span >
-                        Login
-                    </span>
+                />
+                <span>{formik.errors?.password}</span>
+                {!!errorMessage && <div div className="alert-message-login">
+                    <span>Usuario o contraseña incorrecta</span>
+                </div>
+                }
+                <button type='button' onClick={formik.handleSubmit}>
+                    INGRESAR
                 </button>
                 <Link to="/auth/register">¿No estas registrado?</Link>
             </div>
-        </div>
+        </div >
     )
 }

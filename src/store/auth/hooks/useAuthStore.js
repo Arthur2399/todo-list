@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../slice';
 
 export const useAuthStore = () => {
-    const { isLoading, status, user } = useSelector(state => state.auth);
+    const { isLoading, status, user, errorMessage } = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
     const startLogin = () => {
@@ -17,6 +17,7 @@ export const useAuthStore = () => {
         isLoading,
         status,
         user,
+        errorMessage,
 
         //Metodos
         startLogin

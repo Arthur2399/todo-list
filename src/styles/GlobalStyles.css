@@ -3,13 +3,3 @@ body {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
-
-input {
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Outfit', sans-serif;
-}
-
-input::placeholder {
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Outfit', sans-serif;
-}
