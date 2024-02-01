@@ -1,5 +1,5 @@
-import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
 import *as Yup from 'yup';
 import { useAuthStore } from '../../store';
 import './Login.css';
@@ -21,7 +21,7 @@ export const Login = () => {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            console.log(values);
+            startLogin();
         }
     });
 
