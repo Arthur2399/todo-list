@@ -4,7 +4,9 @@ export const ModuleLayout = ({ children }) => {
     return (
         <div>
             <NavBar />
-            <main>
+            <main style={{
+                marginTop: "70px"
+            }}>
                 {children}
             </main>
         </div>
