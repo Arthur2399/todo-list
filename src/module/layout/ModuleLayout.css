@@ -1,0 +1,7 @@
+@import '../../styles/_vars.css';
+
+.moduleLayout-container {
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    background: var(--backgroundApp);
+}

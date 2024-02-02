@@ -1,14 +1,13 @@
 import { NavBar } from "./components"
+import './ModuleLayout.css'
 
 export const ModuleLayout = ({ children }) => {
     return (
-        <div>
+        <>
             <NavBar />
-            <main style={{
-                marginTop: "70px"
-            }}>
+            <main className="moduleLayout-container">
                 {children}
             </main>
-        </div>
+        </>
     )
 }

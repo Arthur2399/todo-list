@@ -2,9 +2,9 @@
 
 .todoPages-container {
     align-items: center;
-    background: var(--backgroundApp);
+    
     display: flex;
-    height: 100vh;
+    height: 100%;
     justify-content: center;
     width: 100%;
 }
