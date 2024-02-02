@@ -1,20 +1,13 @@
 import { useAuthStore } from "../../../store/auth/hooks/useAuthStore"
+import './NavBar.css';
 
 export const ToggeMenu = () => {
 
     const { startLogout } = useAuthStore()
 
     return (
-        <div
-            style={{
-                width: "200px",
-                height: "100px",
-                background: "white",
-                position: "absolute",
-                right: 0,
-                marginTop: "70px"
-            }}
-        >
+        <div className="
+        toggle-Menu">
             <button onClick={startLogout}>salir</button>
         </div>
     )

@@ -1,3 +1,6 @@
+
+@import '../../styles/_vars.css';
+
 .register-container {
     align-items: center;
     background: var(--backgroundApp);
@@ -7,25 +10,14 @@
     width: 100%;
 }
 
-.register-content {
-    height: 50%;
-    width: 50vh;
-    border-radius: 5px;
-    background: var(--orange);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .register-content-items {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    padding: 40px;
+    border-radius: 10px;
+    background: var(--orange);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background: var(--orange);
 }
 
 .register-content-items input {
@@ -37,20 +29,44 @@
     width: calc(100% - 8px);
 }
 
+.register-content-items span {
+    align-self: self-end;
+    color: var(--red);
+    font-size: 10px;
+
+}
+
+.register-content-items input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .register-content-items input:focus {
     outline: 2px solid var(--pink);
 }
 
 .register-content-items button {
-    border: none;
-    border-radius: 5px;
+    width: 100%;
     background: var(--pink);
+    border-radius: 5px;
+    border: none;
+    color: var(--white);
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
     margin-top: 30px;
-    width: 40%;
-    height: 30px;
 }
 
 .register-content-items button:hover {
     background: var(--red);
     color: var(--white);
+}
+.register-content-items a {
+    color: var(--black);
+    text-decoration: none;
+    align-self: self-end;
+    margin-top: 10px;
+}
+.register-content-items a:hover {
+    color: var(--red);
 }

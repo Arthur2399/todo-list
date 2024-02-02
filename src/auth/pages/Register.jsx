@@ -34,9 +34,10 @@ export const Register = () => {
 
     return (
         <div className='register-container'>
-            <div className='register-content'>
-                <h1>REGISTRO</h1>
+            
+                
                 <div className='register-content-items'>
+                    <h1>REGISTRO</h1>
                     <input type="text" placeholder='Nombre' name='name' onChange={formik.handleChange}/>
                     <span>{formik.errors?.name}</span>
                     <input type="text" placeholder='Apellido' name='lastname' onChange={formik.handleChange}/>
@@ -51,6 +52,6 @@ export const Register = () => {
                     <Link to="/auth/login">Ingresar</Link>
                 </div>
             </div>
-        </div>
+        
     )
 }

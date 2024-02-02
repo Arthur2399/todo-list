@@ -53,3 +53,23 @@
     margin-right: 10px;
 
 }
+
+.toggle-Menu{
+    width: 100px;
+    height: 100px;
+    margin-top: 70px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    background-color: var(--backgroundApp2);
+
+}
+
+.toggle-Menu button{
+    background:var(--pink);
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    color:var(--white);
+
+}
