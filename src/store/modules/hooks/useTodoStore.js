@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { onDeleteItem, onInsertItem } from "../slices/TodoSlices";
+import { onDeleteItem, onInsertItem, onUpdateItem } from "../slices/TodoSlices";
 
 export const useTodoStore = () => {
 
@@ -16,6 +16,10 @@ export const useTodoStore = () => {
         dispatch(onDeleteItem(id));
     }
 
+    const startUpdateItem = (item) => {
+        dispatch(onUpdateItem(item))
+    }
+
     return {
         //atributos
         isLoading,
@@ -24,6 +28,7 @@ export const useTodoStore = () => {
 
         //Metodos
         startInsertItem,
-        startDeleteItem
+        startDeleteItem,
+        startUpdateItem,
     }
 }

@@ -16,8 +16,19 @@ export const todoSlice = createSlice({
         },
         onDeleteItem: (state, { payload }) => {
             state.list = state.list.filter((item) => item.id != payload);
+        },
+        onUpdateItem: (state, { payload }) => {
+            let newArray = [];
+            state.list.forEach((item) => {
+                if (item.id == payload.id) {
+                    newArray = [...newArray, payload]
+                } else {
+                    newArray = [...newArray, item]
+                }
+            });
+            state.list = newArray
         }
     }
 });
 
-export const { onCheking, onInsertItem, onDeleteItem } = todoSlice.actions;
+export const { onCheking, onInsertItem, onDeleteItem, onUpdateItem } = todoSlice.actions;
