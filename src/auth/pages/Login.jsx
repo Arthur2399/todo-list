@@ -21,7 +21,7 @@ export const Login = () => {
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            startLogin();
+            startLogin(values);
         }
     });
 
@@ -45,7 +45,7 @@ export const Login = () => {
                 />
                 <span>{formik.errors?.password}</span>
                 {!!errorMessage && <div div className="alert-message-login">
-                    <span>Usuario o contraseña incorrecta</span>
+                    <span>{errorMessage}</span>
                 </div>
                 }
                 <button type='button' onClick={formik.handleSubmit}>

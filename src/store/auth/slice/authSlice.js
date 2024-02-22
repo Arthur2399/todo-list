@@ -12,12 +12,10 @@ export const authSlice = createSlice({
         onCheking: (state) => {
             state.isLoading = true;
         },
-        login: (state) => {
+        login: (state, { payload }) => {
             state.isLoading = false;
             state.status = "Authenticated";
-            state.user = {
-                name: "Arthur Chavez",
-            };
+            state.user = payload;
         },
         logout: (state, { payload }) => {
             state.isLoading = false;
