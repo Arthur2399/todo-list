@@ -6,9 +6,7 @@ export const ModulesRoutes = () => {
     return (
         <ModuleLayout>
             <Routes>
-                <Route path="/" element={<h2>Bienvenido</h2>} />
-                <Route path="/to-do" element={<TodoListPage />} />
-                <Route path="/progress" element={<h2>Progreso</h2>} />
+                <Route path="/" element={<TodoListPage />} />
             </Routes>
         </ModuleLayout>
     )

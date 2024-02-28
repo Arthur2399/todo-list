@@ -18,16 +18,6 @@ export const NavBar = () => {
                         Inicio
                     </li>
                 </Link>
-                <Link to="/to-do">
-                    <li>
-                        TODO
-                    </li>
-                </Link>
-                <Link to="/progress">
-                    <li>
-                        Progreso
-                    </li>
-                </Link>
             </ul>
             <div className='navBar-container-profile'>
                 <label >{`${user.name} ${user.lastName}`}</label>
