@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { ToggeMenu } from './ToggeMenu';
 import { useState } from 'react';
+import { useAuthStore } from '../../../store/auth/hooks/useAuthStore';
 
 export const NavBar = () => {
 
     const [isToogleMenu, setIsToogleMenu] = useState(false);
 
+    const { user } = useAuthStore();
 
     return (
         <nav className='navBar-container'>
@@ -28,7 +30,7 @@ export const NavBar = () => {
                 </Link>
             </ul>
             <div className='navBar-container-profile'>
-                <label >Alexandra Daddario</label>
+                <label >{`${user.name} ${user.lastName}`}</label>
                 <img onClick={() => { setIsToogleMenu(!isToogleMenu) }}
                     src="https://www.emmys.com/sites/default/files/photos-article/alexandra-daddario-900x600.jpg" alt="foto" />
             </div>

@@ -7,15 +7,12 @@ export const todoApi = axios.create({
     baseURL: VITE_API_URL
 });
 
-
-
-/* morgquickApi.interceptors.request.use( config => {
+todoApi.interceptors.request.use(config => {
 
     config.headers = {
         ...config.headers,
-        'Authorization': localStorage.getItem('token')
+        'x-token': sessionStorage.getItem('token')
     }
 
     return config;
 })
- */
