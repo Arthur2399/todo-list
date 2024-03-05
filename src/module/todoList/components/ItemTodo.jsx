@@ -15,8 +15,7 @@ export const ItemTodo = ({ id, index, item }) => {
             id: id,
             item: itemValue
         })
-
-    }
+    };
 
     return (
         <div key={id}>

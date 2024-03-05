@@ -1,13 +1,13 @@
 import { useFormik } from 'formik';
 import { useTodoStore } from '../../../store/modules/hooks/useTodoStore';
 import { ItemTodo, ImageNothing } from '../components';
-import { useTodoListPage } from '../hooks/useTodoListPage';
 
 import './TodoListPage.css';
+import { useEffect } from 'react';
 
 export const TodoListPage = () => {
 
-    const { list, startInsertItem } = useTodoStore()
+    const { list, startInsertItem, startGetTodos } = useTodoStore()
 
     const formik = useFormik({
         initialValues: {
@@ -19,6 +19,12 @@ export const TodoListPage = () => {
             }
         }
     })
+
+
+    useEffect(() => {
+        startGetTodos();
+    }, []);
+
 
     return (
         <div className='todoPages-container'>

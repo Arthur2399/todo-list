@@ -1,11 +1,24 @@
 import { useDispatch, useSelector } from "react-redux"
-import { onDeleteItem, onInsertItem, onUpdateItem } from "../slices/TodoSlices";
+import { onDeleteItem, onInsertItem, onSetListItem, onUpdateItem } from "../slices/TodoSlices";
 import { todoApi } from "../../../api/todoApi";
 
 export const useTodoStore = () => {
 
     const { isLoading, list, errorMessage } = useSelector(state => state.todo)
     const dispatch = useDispatch();
+
+
+    const startGetTodos = async () => {
+        try {
+            const resp = await todoApi.get('/api/todo');
+            const listTodos = resp.data.todos;
+            dispatch(onSetListItem(listTodos))
+
+        } catch (error) {
+            console.log(error)
+        }
+    };
+
 
     const startInsertItem = async (data) => {
         try {
@@ -20,10 +33,14 @@ export const useTodoStore = () => {
         }
     }
 
-    const startDeleteItem = (id) => {
-        //
-        dispatch(onDeleteItem(id));
-    }
+    const startDeleteItem = async (id) => {
+        try {
+            todoApi.delete(`/api/todo/${id}`)
+            dispatch(onDeleteItem(id));
+        } catch (error) {
+            console.log(errpr)
+        }
+    };
 
     const startUpdateItem = (item) => {
         dispatch(onUpdateItem(item))
@@ -39,5 +56,6 @@ export const useTodoStore = () => {
         startInsertItem,
         startDeleteItem,
         startUpdateItem,
+        startGetTodos
     }
 }

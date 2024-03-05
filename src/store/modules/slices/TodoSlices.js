@@ -11,6 +11,10 @@ export const todoSlice = createSlice({
         onCheking: (state) => {
             state.isLoading = true;
         },
+        onSetListItem: (state, { payload }) => {
+            state.isLoading = false;
+            state.list = payload
+        },
         onInsertItem: (state, { payload }) => {
             state.list = [...state.list, payload]
         },
@@ -31,4 +35,4 @@ export const todoSlice = createSlice({
     }
 });
 
-export const { onCheking, onInsertItem, onDeleteItem, onUpdateItem } = todoSlice.actions;
+export const { onCheking, onSetListItem, onInsertItem, onDeleteItem, onUpdateItem } = todoSlice.actions;
