@@ -23,10 +23,10 @@ export const useTodoStore = () => {
     const startInsertItem = async (data) => {
         try {
             const resp = await todoApi.post('/api/todo/create', data);
-            const { task, _id } = resp.data.newTodo || {};
+            const { task, id } = resp.data.newTodo || {};
             dispatch(onInsertItem({
                 task,
-                id: _id
+                id: id
             }));
         } catch (error) {
             console.log(error)
@@ -35,15 +35,21 @@ export const useTodoStore = () => {
 
     const startDeleteItem = async (id) => {
         try {
-            todoApi.delete(`/api/todo/${id}`)
+            await todoApi.delete(`/api/todo/${id}`)
             dispatch(onDeleteItem(id));
         } catch (error) {
             console.log(errpr)
         }
     };
 
-    const startUpdateItem = (item) => {
-        dispatch(onUpdateItem(item))
+    const startUpdateItem = async (item) => {
+        const { id, task } = item || {};
+        try {
+            await todoApi.put(`/api/todo/update/${id}`, { task });
+            dispatch(onUpdateItem(item))
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return {

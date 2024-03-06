@@ -13,7 +13,7 @@ export const ItemTodo = ({ id, index, item }) => {
         setToggleEdit(false);
         startUpdateItem({
             id: id,
-            item: itemValue
+            task: itemValue
         })
     };
 
